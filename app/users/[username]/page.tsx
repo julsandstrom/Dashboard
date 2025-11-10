@@ -18,6 +18,8 @@ import { BadgeCheck, Citrus } from 'lucide-react';
 import { Sheet, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import EditUser from '@/components/EditUser';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import AppLineChart from '@/components/AppLineChart';
 
 const SingleUserPage = () => {
   return (
@@ -126,9 +128,30 @@ const SingleUserPage = () => {
         {/* RIGHT */}
         <div className="w-full xl:w-2/3 space-y-6">
           {/* USER CARD CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">User Card</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage
+                  src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000"
+                  alt="dog profile image"
+                />
+                <AvatarFallback>JS</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">Julian Sandström</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              {' '}
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id cum
+              perspiciatis quae temporibus velit sequi ut quam alias,
+              consectetur dicta esse quaerat sit impedit, commodi quas eius
+              doloremque rem ea?
+            </p>
+          </div>
           {/* CHART CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Activity</h1>
+            <AppLineChart />
+          </div>
         </div>
       </div>
     </div>
